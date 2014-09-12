@@ -1,9 +1,42 @@
 {
+	"build_systems":
+	[
+		{
+			"name": "NPM Install",
+			"shell_cmd": "npm install"
+		},
+		{
+			"name": "Bower Install",
+			"shell_cmd": "bower install"
+		}
+	],
 	"folders":
 	[
 		{
-			"follow_symlinks": true,
-			"path": "/Users/phil/Workspace/philipp-giese"
+			"file_exclude_patterns":
+			[
+				".classpath",
+				".project",
+				".gitignore"
+			],
+			"folder_exclude_patterns":
+			[
+				"node_modules",
+				"target",
+				"docs",
+				".metadata",
+				".settings",
+				".sonar",
+				"api-docs"
+			],
+			"path": "."
 		}
-	]
+	],
+	"settings":
+	{
+		"default_line_ending": "LF",
+		"tab_size": 4,
+		"translate_tabs_to_spaces": true,
+		"trim_trailing_white_space_on_save": true
+	}
 }

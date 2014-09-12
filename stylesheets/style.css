@@ -13,6 +13,11 @@ body {
 body * {
   box-sizing: border-box;
 }
+a {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px dotted black;
+}
 .container {
   perspective: 1000;
   height: 500px;
@@ -20,6 +25,7 @@ body * {
   margin-left: auto;
   margin-right: auto;
   border-radius: 250px;
+  cursor: pointer;
 }
 .container.hover .circle {
   transform: rotateY(180deg);
@@ -28,6 +34,9 @@ body * {
   opacity: 0;
   pointer-events: none;
   transition-delay: 0.6s;
+}
+.container.hover .social .service.expanded {
+  z-index: 1;
 }
 .container.hover .social .service.info {
   top: 25px;
@@ -70,9 +79,11 @@ body * {
   height: 500px;
   margin-left: auto;
   margin-right: auto;
+  pointer-events: none;
 }
 .container .social .service {
   position: absolute;
+  pointer-events: all;
   top: 225px;
   left: 225px;
   opacity: 0.5;
@@ -84,13 +95,16 @@ body * {
   font-size: 25px;
   text-align: center;
   text-shadow: 1px 1px 0 black;
-  transition: top 0.6s cubic-bezier(0.9, -0.8, 0.65, 1.55), left 0.6s cubic-bezier(0.9, -0.8, 0.65, 1.55), opacity 0.3s ease;
+  transition: top 0.6s cubic-bezier(0.9, -0.8, 0.65, 1.55), left 0.6s cubic-bezier(0.9, -0.8, 0.65, 1.55);
   cursor: pointer;
 }
 .container .social .service:hover {
   opacity: 1;
 }
 .container .social .service:hover .title {
+  opacity: 1;
+}
+.container .social .service.selected {
   opacity: 1;
 }
 .container .social .service .title {
@@ -179,9 +193,16 @@ body * {
 }
 .container .circle .info {
   opacity: 0;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
+  font-size: 26px;
   transform: rotateZ(180deg);
   transition: 0s;
   transition-delay: 0.6s;
+  cursor: default;
+  font-family: 'Amatic SC', cursive;
+}
+.container .circle .info h1 {
+  font-family: 'Rock Salt', cursive;
+  font-size: 32px;
 }

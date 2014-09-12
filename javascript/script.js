@@ -26,13 +26,23 @@
     $(document).ready(function() {
         position();
 
-        $(".circle .front, .circle .picture").click(function() {
+        $(".container").click(function() {
             $(".container").toggleClass("hover");
             $(".container").removeClass("info");
+
+            window.setTimeout(function() {
+                if($(".container").hasClass("hover")) {
+                    $(".service").addClass("expanded");
+                } else {
+                    $(".service").removeClass("expanded");
+                }
+            }, 1000);
         });
 
         $(".circle .info").click(function() {
             $(".container").toggleClass("info");
+
+            return false;
         });
 
         registerService("linkedin", "https://www.linkedin.com/profile/view?id=108940873");
@@ -41,6 +51,10 @@
 
         $(".service.info").click(function() {
             $(".container").removeClass("contact").toggleClass("info");
+
+            $(".service").removeClass("selected");
+
+            $(this).addClass("selected");
 
             return false;
         });
